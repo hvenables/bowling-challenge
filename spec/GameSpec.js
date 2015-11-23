@@ -217,7 +217,7 @@ describe('Game', function() {
     expect(game.totalScore).toEqual(223);
   });
 
-  it('should calculate a game score 8', function() {
+  it('should calculate a game score 9', function() {
     frame.bowl(5);
     frame.bowl(4);
     frame.bowl(3);
@@ -239,5 +239,29 @@ describe('Game', function() {
     frame.bowl(10);
     expect(game.totalScore).toEqual(123);
   });
+
+  it('should calculate a game score 10', function() {
+    frame.bowl(5);
+    frame.bowl(4);
+    frame.bowl(3);
+    frame.bowl(4);
+    frame.bowl(4);
+    frame.bowl(3);
+    frame.bowl(10);
+    frame.bowl(6);
+    frame.bowl(4);
+    frame.bowl(8);
+    frame.bowl(2);
+    frame.bowl(1);
+    frame.bowl(2);
+    frame.bowl(4);
+    frame.bowl(4);
+    frame.bowl(10);
+    frame.bowl(7);
+    frame.bowl(3);
+    frame.bowl(7);
+    expect(game.totalScore).toEqual(120);
+  });
+
 
 });

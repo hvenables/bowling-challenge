@@ -4,9 +4,9 @@ describe('Frame', function() {
     frame = new Frame();
     game = new Game();
     game.totalScore = 0;
-    jasmine.getFixtures().fixturesPath = './lib/views';
-    loadFixtures('index.erb');
-    $.holdReady(false);
+    // jasmine.getFixtures().fixturesPath = './lib/views';
+    // loadFixtures('index.erb');
+    // $.holdReady(false);
   });
 
   function nineFrames() {
@@ -55,6 +55,13 @@ describe('Frame', function() {
   it('should allow nine bowls', function() {
     nineFrames();
     expect(game.gameArray.length).toEqual(9);
+  });
+
+  it('should be able to total three strikes', function() {
+    frame.bowl(10)
+    frame.bowl(10)
+    frame.bowl(10)
+    expect(game.totalScore).toEqual(60)
   });
 
   it('should allow three strikes on the last frame', function() {
@@ -114,8 +121,8 @@ describe('Frame', function() {
     expect(frame.currentFrame[0]).toEqual(7);
   });
 
-  it('place a bowling score', function() {
-    $('#button0').click();
-    expect('#bowl1').toContainText('0');
-  });
+  // it('place a bowling score', function() {
+  //   $('#button0').click();
+  //   expect('#bowl1').toContainText('0');
+  // });
 });

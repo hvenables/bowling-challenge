@@ -3,6 +3,10 @@
   background-color: black;
   padding: 0px;
   border-radius: 5px;
+  width: 1070px;
+  float: left;
+  left: 11%;
+  position: relative;
   /*border: 2px solid white*/
 }
 #grid {
